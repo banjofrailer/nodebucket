@@ -1,3 +1,12 @@
+/**
+ * Title: main.ts
+ * Author: Professor Krasso
+ * Date: 23 September 2020
+ * Modified By: Sarah Kovar
+ * Description: Main Typescript
+ */
+
+
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 

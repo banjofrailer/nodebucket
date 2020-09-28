@@ -1,3 +1,11 @@
+/**
+ * Title: home.component.ts
+ * Author: Professor Krasso
+ * Date: 23 September 2020
+ * Modified By: Sarah Kovar
+ * Description: Home Component
+ */
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({

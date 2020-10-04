@@ -17,7 +17,7 @@ const path = require('path');
 const mongoose = require('mongoose');
 const { resolveSanitizationFn } = require('@angular/compiler/src/render3/view/template');
 const Employee = require('./models/employee');
-
+const EmployeeApi = require('./routes/employee-api'); //import the employee API
 /**
  * App configurations
  */
@@ -55,49 +55,7 @@ mongoose.connect(conn, {
  * API(s) go here...
  */
 
- /**
-  * Find employees by ID
-  */
-
-app.get('/api/employees/:empId', async(req, res) => {
-
-  try {
-
-    /**
-     * Use the mongoose employee model to query MongoDB Atlas by employeeID
-     */
-    Employee.findOne({ 'empId': req.params.empId }, function(err, employee){
-
-      /**
-       * If there is a database level error, handle by returning a server 500 error
-       */
-      if (err) {
-        console.log(err);
-        res.status(500).send({
-          'message': 'Internal server error!'
-        })
-      } else {
-        /**
-         * If there are no database level errors, return the employee object
-         * {}
-         */
-        console.log(employee);
-        res.json(employee);
-      }
-    })
-
-    } catch (e) {
-      /**
-       * Catch any potential errors we didn't prepare for
-       */
-      console.log(e);
-
-      res.status(500).send({
-        'message': 'Internal server error!'
-      })
-    }
-})
-
+app.use('/api/employees', EmployeeApi); //localhost:3000/api/employees
 
 /**
  * Create and start server

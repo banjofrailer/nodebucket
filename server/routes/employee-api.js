@@ -1,3 +1,12 @@
+/**
+ * Title: employee-api.js
+ * Author: Professor Krasso
+ * Date: 30 September 2020
+ * Modified By: Sarah Kovar
+ * Description: API for Employees
+ */
+
+
 const express = require('express');
 const Employee = require('../models/employee');
 const BaseResponse = require('../services/base-response');
@@ -24,13 +33,13 @@ router.get('/:empId', async(req, res) => {
       if (err) {
         console.log(err);
 
-        const mongoDbErrorResponse = new ErrorResponse('500', 'Internal server error', err); //new
+        //const mongoDbErrorResponse = new ErrorResponse('500', 'Internal server error', err); //new
 
-        //res.status(500).send({
-        //  'message': 'Internal server error!'
+        res.status(500).send({
+          'message': 'Internal server error!'
 
-        res.status(500).send(mongoDbErrorResponse.toObject()) //new
-       // })
+        //res.status(500).send(mongoDbErrorResponse.toObject()) //new
+        })
       } else {
         /**
          * If there are no database level errors, return the employee object
@@ -38,10 +47,10 @@ router.get('/:empId', async(req, res) => {
          */
         console.log(employee);
 
-        const employeeTasksResponse = new BaseResponse('200', 'Query Successful', employee); //new
-        res.json(employeeTasksResponse.toObject()); //new
+        //const employeeTasksResponse = new BaseResponse('200', 'Query Successful', employee); //new
+        //res.json(employeeTasksResponse.toObject()); //new
 
-        //res.json(employee);
+        res.json(employee);
       }
     })
 
@@ -51,13 +60,14 @@ router.get('/:empId', async(req, res) => {
        */
       console.log(e);
 
-     // res.status(500).send({
-     //   'message': 'Internal server error!'
-     // })
+      res.status(500).send({
+        'message': 'Internal server error!'
+      })
 
-     const errorCatchResponse = new ErrorResponse('500', 'Internal server error', e.message); //new
-     res.status(500).send(errorCatchResponse.toObject()); //new
-    }
+     //const errorCatchResponse = new ErrorResponse('500', 'Internal server error', e.message); //new
+     //res.status(500).send(errorCatchResponse.toObject()); //new
+
+  }
 })
 
 /**

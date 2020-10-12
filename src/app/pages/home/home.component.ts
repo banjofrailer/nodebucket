@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 /**
  * Title: home.component.ts
  * Author: Professor Krasso
@@ -15,6 +14,7 @@ import { Employee } from 'src/app/shared/employee.interface';
 import { CookieService } from 'ngx-cookie-service';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateTaskDialogComponent } from 'src/app/shared/create-task-dialog/create-task-dialog.component';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({

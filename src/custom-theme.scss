@@ -2,6 +2,8 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @import '~@angular/material/theming';
+//@import '@angular/material/prebuilt-themes/forest.css';
+
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -12,14 +14,21 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$nodebucket-primary: mat-palette($mat-indigo);
-$nodebucket-accent: mat-palette($mat-pink, A200, A100, A400);
+$nodebucket-primary: mat-palette($mat-brown, 500, 700, 800);
+$nodebucket-accent: mat-palette($mat-green, 200);
+//$forest-app-primary: md-palette($md-brown, 800);       // Brown  <-- CUSTOM COLOR HERE!
+//$forest-app-accent:  md-palette($md-green, A400);      // Green  <-- CUSTOM COLOR HERE!
+
 
 // The warn palette is optional (defaults to red).
-$nodebucket-warn: mat-palette($mat-red);
+$nodebucket-warn: mat-palette($mat-deep-orange, 500);
+//$forest-app-warn:    md-palette($md-deep-orange, 500); // Orange <-- CUSTOM COLOR HERE!
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
+
+//$forest-app-theme: md-light-theme($forest-app-primary, $forest-app-accent, $forest-app-warn);
+
 $nodebucket-theme: mat-light-theme((
   color: (
     primary: $nodebucket-primary,
@@ -33,3 +42,4 @@ $nodebucket-theme: mat-light-theme((
 // that you are using.
 @include angular-material-theme($nodebucket-theme);
 
+//@include angular-material-theme($forest-app-theme);

@@ -1,0 +1,15 @@
+img {
+width: 60vw;
+margin: 0 auto;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: darker;
+}
+
+p {
+  font-size: 18px;
+  font-weight: lighter;
+}
+

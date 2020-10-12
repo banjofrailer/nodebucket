@@ -26,6 +26,15 @@ import { SigninComponent } from './pages/signin/signin.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatDividerModule } from '@angular/material/divider';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { AboutComponent } from './pages/about/about.component';
+import { CreateTaskDialogComponent } from './shared/create-task-dialog/create-task-dialog.component';
+import { MatMenuModule } from '@angular/material/menu'
+
+
 
 @NgModule({
   declarations: [
@@ -33,7 +42,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     HomeComponent,
     BaseLayoutComponent,
     AuthLayoutComponent,
-    SigninComponent
+    SigninComponent,
+    NotFoundComponent,
+    AboutComponent,
+    CreateTaskDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -49,6 +61,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatCardModule,
     MatInputModule,
     MatFormFieldModule,
+    MatDividerModule,
+    DragDropModule,
+    MatDialogModule,
+    MatMenuModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

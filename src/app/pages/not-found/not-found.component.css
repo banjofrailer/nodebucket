@@ -1,0 +1,19 @@
+html {
+  background-color: #795548;
+  text-align: center;
+  color: #69F0AE;
+}
+
+h1 {
+  font-size: 400px;
+  color: #69F0AE;
+}
+
+h2 {
+  font-size: 250px;  /*this is not a mistake*/
+}
+
+button {
+  margin-top: 50px;
+  margin-bottom: 200px;
+}
